@@ -21,6 +21,7 @@
 
 ### 踩的坑们
 1. 字符串输入/开头时,会被自动删除,原因出在AutoFileName插件上,在setting-user里添加一项`"afn_use_project_root": true`即可
+2. node.js的ealint检查提示"缩进应该是2而不是4"之类的错误时,可能是注释缩进有问题导致出现大量缩进错误
 
 ### stylus的环境配置
 1. `cnpm stylus `+`cnpm stylus-loader`安装依赖
