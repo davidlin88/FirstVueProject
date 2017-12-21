@@ -4,7 +4,7 @@
     <div class="content">
       <ul class="cont-ul">
         <!-- list组件展示区,并用v-for将数据遍历,:xx="xxx" 是用来给子组件传递数据的 -->
-        <list v-for="item in items" :price="item.price" :title="item.title" :img="item.img"></list>
+        <list v-for="item in items" :key="item.id" :price="item.price" :title="item.title" :img="item.img"></list>
       </ul>
     </div>
     <common-footer></common-footer> <!-- 展示引入的footer组件 -->

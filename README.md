@@ -7,7 +7,7 @@
 * `npm install vue`:安装vue
 * `npm install -g vue-cli`:安装 vue-cli
 * `vue init webpack vue-projectname`:初始化一个项目
-* `cnmp install`:安装环境
+* `cnmp install`:安装依赖(目录更名后要重新安装依赖)
 * `npm run dev`:运行项目
 * `cd c:/code`:路径跳转
 ### 小tips
@@ -22,6 +22,8 @@
 ### 踩的坑们
 1. 字符串输入/开头时,会被自动删除,原因出在AutoFileName插件上,在setting-user里添加一项`"afn_use_project_root": true`即可
 2. node.js的ealint检查提示"缩进应该是2而不是4"之类的错误时,可能是注释缩进有问题导致出现大量缩进错误
+3. 报错提示`component lists rendered with v-for should have explicit keys`,原因是vue2.0建议在使用`v-for`时给每个项提供一个唯一的key值
+
 
 ### stylus的环境配置
 1. `cnpm stylus `+`cnpm stylus-loader`安装依赖

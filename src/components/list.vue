@@ -2,7 +2,7 @@
   <li class="goods-list">
     <router-link to="/detail" class="goods-list-link">
       <div class="goods-list-pic">
-        <img :src="img" alt="">
+        <img :src="img" :alt="title">
       </div>
       <div class="goods-list-desc">
         <p class="goods-list-name">{{title}}</p>
