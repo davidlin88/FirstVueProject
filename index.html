@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>test</title>
+  <!-- 引入样式重置文件 -->
+  <link rel="stylesheet" href="src/common/normalize.css">
+  <style>
+  * {margin: 0;padding: 0;}
+  li {list-style: none;}
+  a {text-decoration: none;}
+  img {vertical-align: middle;}
+</style>
+</head>
+<body>
+  <div id="app">
+    <!-- 用来展示页面数据 -->
+    <router-view></router-view>
+  </div>
+  <!-- built files will be auto injected -->
+  <script type="text/javascript">
+    // 设备自适应
+    (function(win, doc) {
+      change();
+      function change() {
+        doc.documentElement.style.fontSize = doc.documentElement/clientWidth *20/320 + 'px';
+      }
+      win.addEventListener('resize', change, false);
+      // 这个是移动端设备横屏、竖屏转换时触发的事件处理函数
+      win.addEventListener('orientationchange', change, false);
+    })(window,document);
+  </script>
+</body>
+</html>
