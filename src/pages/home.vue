@@ -29,9 +29,10 @@ export default {
   },
   created () {
     // 这是vue的钩子函数,当new Vue()实例创建完毕后执行的函数
-    this.$http.get('/api/goods').then((data) => {
+    this.$http.get('/api/goods').then((response) => {
       // 调用vue的ajax来请求数据,promise语法,并用es6的箭头函数
-      this.items = data.body.data
+      console.log(response)
+      this.items = response.body.data
     })
   }
 }
