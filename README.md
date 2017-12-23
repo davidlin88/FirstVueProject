@@ -70,16 +70,16 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 ### 组件 + 路由四部曲
 1. **定义组件**:创建`.vue`文件,`template`内写组件的html代码;script内写`export default {}`来导出模块(es6),在其内写组件的js代码(data/methods/components等等);style内写css代码
 > 模块内的data要写作如下返回形式
-```
+`
 data () {
 	return {
 		...
 	}
 }
-```
+`
 > 父组件加载子组件的话,要在script内`export default {}`前写`import example from '../components/example'`,再在`components`中引入,最后在`template`中以标记名的形式使用
 > 路由跳转使用`<router-link to="/detail"></router-link>`的形式
-2. 创建路由实例并定义路由策略
+2. **创建路由实例并定义路由策略**
 
 2.1 在router文件夹中的index.js里**引入路由**插件并使用:
 ```
