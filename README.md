@@ -133,7 +133,7 @@ new Vue({
 ```
 
 ### Vue2.0 之vue-resource 模拟服务端返回本地json数据
-1. 在`webpack.dev.conf.js`文件开头的一堆const后添加:
+1. 在`webpack.dev.conf.js`文件开头的一堆单行的const后添加:
 ```
 // 增加express
 const express = require('express')
