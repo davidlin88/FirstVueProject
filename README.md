@@ -1,4 +1,13 @@
 # firstVueProject
+# 目录
+1. [工具介绍篇](#工具介绍篇)
+2. [环境安装篇](#环境安装篇)
+3. [小tips](#小tips)
+4. [小语法知识](#小语法知识)
+5. [踩的坑们](#踩的坑们)
+6. [stylus的环境配置](#stylus的环境配置)
+7. [组件与路由的四部曲](#组件与路由的四部曲)
+8. [利用vue-resource模拟服务端返回本地json数据](#利用vue-resource模拟服务端返回本地json数据)
 ### 工具介绍篇
 1. node.js
 > 一种javascript的运行环境，能够使得javascript脱离浏览器运行。
@@ -48,7 +57,7 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 *  `created() {}`是vue实例的的一个生命周期钩子函数，会在vue实例被生成后调用这个函数。每一个阶段都会有一个钩子函数，方便开发者在不同阶段处理不同逻辑。一般可以在created函数中调用ajax获取页面初始化所需的数据。
 
 
-### 接口测试
+### 致谢
 * 2017.12.20,迈进了历史性的一步,困扰了3天的由于vue版本+vue-cli版本差异导致的测试接口数据终于成功了!..在此对[datura_lj](https://www.jianshu.com/u/b6daf42c2cdd)表示感谢!
 
 ### 踩的坑们
@@ -67,7 +76,7 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 ```
 3. 在style标记内写stylus代码
 
-### 组件 + 路由四部曲
+### 组件与路由的四部曲
 1. **定义组件** <br/>
 创建`.vue`文件,`template`内写组件的html代码;script内写`export default {}`来导出模块(es6),在其内写组件的js代码(data/methods/components等等);style内写css代码
 > 模块内的data要写作如下返回形式
@@ -133,7 +142,7 @@ new Vue({
 })
 ```
 
-### Vue2.0 之vue-resource 模拟服务端返回本地json数据
+### 利用vue-resource模拟服务端返回本地json数据
 1. 在`webpack.dev.conf.js`文件开头的一堆单行的const后添加:
 ```
 // 增加express
@@ -159,10 +168,19 @@ before(app) {
   })
 }
 ```
+2. 在组件入口处(main.js)引入并使用`vue-resource`
+```
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
+```
+> 此步若忽略,就会出现可以通过.../api获取json,但实例中不能调用的情况
+
 3. 重新运行项目
 ```
 npm run dev
 ```
+
 4. 在实例中调用请求
 ```
 this.$http.get('/api/goods').then(response => {
