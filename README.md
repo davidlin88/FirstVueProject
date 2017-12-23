@@ -168,7 +168,7 @@ before(app) {
   })
 }
 ```
-2. 在组件入口处(main.js)引入并使用`vue-resource`
+3. 在组件入口处(main.js)引入并使用`vue-resource`
 ```
 import VueResource from 'vue-resource'
 
@@ -176,12 +176,12 @@ Vue.use(VueResource)
 ```
 > 此步若忽略,就会出现可以通过.../api获取json,但实例中不能调用的情况
 
-3. 重新运行项目
+4. 重新运行项目
 ```
 npm run dev
 ```
 
-4. 在实例中调用请求
+5. 在实例中调用请求
 ```
 this.$http.get('/api/goods').then(response => {
       console.log(response.body);
