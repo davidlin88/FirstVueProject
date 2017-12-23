@@ -78,9 +78,10 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 > 父组件加载子组件的话,要在script内`export default {}`前写`import example from '../components/example'`,再在`components`中引入,最后在`template`中以标记名的形式使用
 > 路由跳转使用`<router-link to="/detail"></router-link>`的形式
 
-2. 创建路由实例并定义路由策略
+2. **创建路由实例并定义路由策略**
 
-2.1 在router文件夹中的index.js里**引入路由**插件并使用:
+2.1 **引入路由并使用**:
+> 可在router文件夹中的index.js里.
 ```
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -114,7 +115,7 @@ routes: [
 ]
 ```
 
-3. **挂载路由**:
+3. **挂载路由**<br/>
 在组件总入口main.js文件中,引入vue依赖并创建一个Vue实例,在实例中引入路由:
 ```
 import Vue from 'vue'
@@ -129,4 +130,53 @@ new Vue({
     }
   }
 })
+```
+
+### Vue2.0 之vue-resource 模拟服务端返回本地json数据
+1. 在`webpack.dev.conf.js`文件开头的一堆const后添加:
+```
+// 增加express
+const express = require('express')
+const app = express()
+//加载本地数据文件
+var appData = require('../goods.json') //获取json对象
+var goods = appData.goods	//获取字段名
+var apiRoutes = express.Router()
+//为了统一管理api接口，我们在要请求的路由前边都加上‘/api’来表明这个路径是专门用来提供api数据的
+app.use('/api', apiRoutes)	
+```
+
+2. 在同文件的`devServer`属性的最后添加:
+```
+// 增加路由规则
+before(app) {
+  app.get('/api/goods', (req, res) => {
+    res.json({
+      code: 0,
+      data: goods
+    })
+  })
+}
+```
+3. 重新运行项目
+```
+npm run dev
+```
+4. 在实例中调用请求
+```
+this.$http.get('/api/goods').then(response => {
+      console.log(response.body);
+      this.goods = response.body.data;
+  }, response => {
+      console.log(response);
+  });
+```
+以上是es6的箭头函数写法,es5写法如下
+```
+this.$http.get('/api/goods').then(function (response) {
+      console.log(response.body);
+      this.goods = response.body.data;
+  }, function (response) {
+      console.log(response);
+  });
 ```
