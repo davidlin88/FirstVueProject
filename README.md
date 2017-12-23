@@ -50,7 +50,8 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 ### 小tips
 * svg矢量图转化为字符的使用方法: [IcoMoon官网](https://icomoon.io/)   [IcoMoon的灵活使用](http://www.zhangxinxu.com/wordpress/2012/06/free-icon-font-usage-icomoon/)
 * [normalize.css](http://necolas.github.io/normalize.css/),是一种CSS reset的替代方案,[了解更多](http://jerryzou.com/posts/aboutNormalizeCss/)
-* npm报错`no-tabs`的解决方法:1.在eslint的配置文件中`eslintrc`rules项中添加一行：`"no-tabs":"off"`;2.sublime右下角点击转化为空格缩进,再勾选使用空格缩进
+* 链接若是像http://localhost:8080/#/一样,多了个碍眼的#,可在router下index.js中的路由对象中添加属性:`mode: 'history'`
+
 
 ### 小语法知识
 * `.`表示当前目录,就像`..`或`@`表示父目录
@@ -65,7 +66,7 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 2. node.js的ealint检查提示"缩进应该是2而不是4"之类的错误时,可能是注释缩进有问题导致出现大量缩进错误
 3. 报错提示`component lists rendered with v-for should have explicit keys`,原因是vue2.0建议在使用`v-for`时给每个项提供一个唯一的key值
 4. 默认的webpack模板是没有按照express框架和vue-resource的,使用的话记得加上`cnpm install express --save-dev`安装依赖并保存到package.json内
-
+5. npm报错`no-tabs`的解决方法:1.在eslint的配置文件中`eslintrc`rules项中添加一行：`"no-tabs":"off"`;2.sublime右下角点击转化为空格缩进,再勾选使用空格缩进
 ### stylus的环境配置
 1. `cnpm stylus `+`cnpm stylus-loader`安装依赖
 2. 在css的标记处写明(经测试似乎没有`rel="stylesheet/stylus"`不影响):
