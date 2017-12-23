@@ -77,21 +77,22 @@ data () {
 	}
 }
 ```
-> 父组件加载子组件的话,要在script内`export default {}`前写`import example from '../components/example'`,再再`components`中引入,最后在`template`中以标记名的形式使用
+> 父组件加载子组件的话,要在script内`export default {}`前写`import example from '../components/example'`,再在`components`中引入,最后在`template`中以标记名的形式使用
 > 路由跳转使用`<router-link to="/detail"></router-link>`的形式
 2. 创建路由实例并定义路由策略
-	1. 在router文件夹中的index.js里引入路由插件并使用:
+
+2.1 在router文件夹中的index.js里**引入路由**插件并使用:
 ```
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 ```
-  2. **创建路由实例**
+2.2 **创建路由实例**
 ```
   export default new VueRouter({
 		routes: [...]
 	})
 ```
-	3. **定义路由策略**
+2.3 **定义路由策略**
 ```
 //在路由实例的routes属性内定义
 routes: [
