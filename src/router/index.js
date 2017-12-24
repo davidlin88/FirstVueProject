@@ -9,15 +9,13 @@ Vue.use(VueRouter)
 
 // 下面不要顺手格式化,eslint会缩进报错
 export default new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       // 进行路由配置
       path: '/',
-      component: resolve => require(['../pages/home.vue'], resolve),
-      meta: {
-        title: 'home'
-      }
+      // 这样写可以按需加载
+      component: resolve => require(['../pages/home.vue'], resolve)
     },
     {
       path: '/msg',
