@@ -67,6 +67,7 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 3. 报错提示`component lists rendered with v-for should have explicit keys`,原因是vue2.0建议在使用`v-for`时给每个项提供一个唯一的key值
 4. 默认的webpack模板是没有按照express框架和vue-resource的,使用的话记得加上`cnpm install express --save-dev`安装依赖并保存到package.json内
 5. npm报错`no-tabs`的解决方法:1.在eslint的配置文件中`eslintrc`rules项中添加一行：`"no-tabs":"off"`;2.sublime右下角点击转化为空格缩进,再勾选使用空格缩进
+6. 页面显示空白页不报错,原因:尝试打包后将config下的index.js的assetsPublicPath路径加了个`.`...
 ### stylus的环境配置
 1. `cnpm stylus `+`cnpm stylus-loader`安装依赖
 2. 在css的标记处写明(经测试似乎没有`rel="stylesheet/stylus"`不影响):
