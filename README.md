@@ -50,8 +50,6 @@ Webpack的工作方式是：把你的项目当做一个整体，通过一个给�
 ### 小tips
 * svg矢量图转化为字符的使用方法: [IcoMoon官网](https://icomoon.io/)   [IcoMoon的灵活使用](http://www.zhangxinxu.com/wordpress/2012/06/free-icon-font-usage-icomoon/)
 * [normalize.css](http://necolas.github.io/normalize.css/),是一种CSS reset的替代方案,[了解更多](http://jerryzou.com/posts/aboutNormalizeCss/)
-* 链接若是像http://localhost:8080/#/一样,多了个碍眼的#,可在router下index.js中的路由对象中添加属性:`mode: 'history'`
-
 
 ### 小语法知识
 * `.`表示当前目录,就像`..`或`@`表示父目录
